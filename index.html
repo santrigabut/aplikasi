@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Santri GABUT - Aplikasi PPOB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #343434;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a1a, #444);
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+    }
+
+    nav {
+      background: #2c2c2c;
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #00c6ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #00c6ff;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .download-btn {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 40px;
+      padding: 14px 32px;
+      background-color: #00c6ff;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0,198,255,0.4);
+    }
+
+    .download-btn:hover {
+      background-color: #00a0cc;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature-item {
+      background: #2a2a2a;
+      border-radius: 16px;
+      padding: 25px;
+      width: 270px;
+      text-align: center;
+      color: #ddd;
+    }
+
+    .feature-item h3 {
+      margin: 15px 0 10px;
+      font-size: 1.25rem;
+      color: #00c6ff;
+    }
+
+    .testimonial {
+      background: #2a2a2a;
+      padding: 25px;
+      margin: 15px auto;
+      border-radius: 12px;
+      max-width: 600px;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      background-color: #00c6ff;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .footer {
+      background: #1a1a1a;
+      color: #aaa;
+      padding: 25px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+  </style>
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const nama = document.querySelector('input[placeholder="Nama Anda"]').value;
+      const email = document.querySelector('input[placeholder="Email Anda"]').value;
+      const pesan = document.querySelector('textarea').value;
+
+      const nomor = '6281234567890';
+      const teks = `Halo, saya ${nama} (Email: ${email}) ingin menghubungi Anda.%0A%0APesan:%0A${pesan}`;
+      const url = `https://wa.me/${nomor}?text=${teks}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#fitur">Fitur</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <header id="beranda">
+    <h1>Santri GABUT</h1>
+    <p>Aplikasi PPOB Karya Anak Pesantren</p>
+  </header>
+
+  <section class="content">
+    <h2>Apa Itu Santri GABUT?</h2>
+    <p>
+      Santri GABUT adalah aplikasi PPOB yang memudahkan kamu dalam melakukan berbagai pembayaran seperti listrik, pulsa, e-wallet, dan banyak lagi.
+    </p>
+    <a class="download-btn" href="https://santri-gabut.uptodown.com/android" target="_blank">Download di Uptodown</a>
+  </section>
+
+  <section id="fitur" class="features">
+    <h2>Fitur Unggulan</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Bayar Tagihan</h3>
+        <p>PLN, PDAM, Internet, dan TV Kabel bisa kamu bayar langsung.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Isi Pulsa & Data</h3>
+        <p>Dapatkan pulsa dan kuota internet semua operator.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Top-Up E-Wallet</h3>
+        <p>Top-up OVO, DANA, GoPay, dan lainnya cepat dan mudah.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Mudah Digunakan</h3>
+        <p>Desain antarmuka yang ramah dan cocok untuk semua kalangan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimoni" class="testimonials">
+    <h2>Testimoni Pengguna</h2>
+    <div class="testimonial">
+      <p>"Santri GABUT sangat membantu saya dalam membayar tagihan bulanan dengan cepat."</p>
+      <strong>- H. Zulkifli, Jabar</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Fitur top-up e-wallet-nya gampang banget dipakai, sangat memudahkan!"</p>
+      <strong>- A. Rahmawati, Jatim</strong>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact">
+    <h2>Hubungi Kami</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <input type="text" placeholder="Nama Anda" required>
+      <input type="email" placeholder="Email Anda" required>
+      <textarea rows="5" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim Pesan via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Santri GABUT. Seluruh hak cipta dilindungi.
+  </footer>
+
+</body>
+</html>
